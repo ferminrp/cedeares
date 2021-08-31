@@ -19,8 +19,19 @@
 	});
 </script>
 
-<h1>Listado de Cedeares Disponibles</h1>
+<main>
+<h1>Listado de Cedeares</h1>
 
 {#if data.length > 0}
 <Tabla {data} />
 {/if}
+
+</main>
+
+<style>
+	main {
+		width: 720px;
+		margin: auto;
+		max-width: 90vw;
+	}
+</style>
