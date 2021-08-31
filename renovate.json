@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
+  "automerge": true
+
+}
