@@ -1,5 +1,6 @@
 <script>
     export let data;
+	export let columns;
     /*https://gridjs.io/docs/hello-world*/
     import Grid from "gridjs-svelte";
 
@@ -24,7 +25,7 @@
 	}
 </script>
 
-<Grid bind:instance={grid} {data} />
+<Grid bind:instance={grid} {data} {columns} />
 
 <style global>
 	@import "https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css";

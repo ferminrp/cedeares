@@ -2,6 +2,7 @@
   import Tabla from "./UI/Tabla.svelte";
 
   let data = [];
+  let columns = ["Symbol","Name", "Price", "Change"];
 
   const cedeares = fetch(
     "https://sheets.googleapis.com/v4/spreadsheets/1NDOyoL3PGNe-rAm-eMHGrLKLASE6j_tUjkJ3lwXTqu0/values/main!A2:D193?key=AIzaSyBhiqVypmyLHYPmqZYtvdSvxEopcLZBdYU"
@@ -23,7 +24,7 @@
 <h1>Listado de CEDEARs</h1>
 
 {#if data.length > 0}
-<Tabla {data} />
+<Tabla {data} {columns} />
 {/if}
 
 </main>
