@@ -20,7 +20,7 @@
 </script>
 
 <main>
-<h1>Listado de Cedeares</h1>
+<h1>Listado de CEDEARs</h1>
 
 {#if data.length > 0}
 <Tabla {data} />
