@@ -2,13 +2,10 @@
   "extends": [
     "config:base"
   ],
-    "patch": {
-    "automerge": true
-  },
-  "pin": {
-    "automerge": true
-  },
+  
   "lockFileMaintenance": {
+    "enabled": true,
     "automerge": true
   }
+
 }
