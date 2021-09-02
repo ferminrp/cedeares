@@ -24,9 +24,6 @@
 </div>
 
 <style>
-  table {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  }
 
   th {
 	  background-color: black;
