@@ -1,5 +1,6 @@
 <script>
   import Tabla from "./UI/Tabla.svelte";
+  import { BarLoader } from 'svelte-loading-spinners'
 
   let data = [];
   let columns = ["Symbol","Name", "Price", "Change"];
@@ -25,6 +26,10 @@
 
 {#if data.length > 0}
 	<Tabla {data} {columns} />
+{:else}
+<div class="loader">
+	<BarLoader />
+</div>
 {/if}
 
 </main>
@@ -34,5 +39,12 @@
 		width: 720px;
 		margin: auto;
 		max-width: 90vw;
+	}
+
+	.loader {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 20rem;
 	}
 </style>
