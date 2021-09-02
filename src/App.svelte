@@ -24,7 +24,7 @@
 <h1>Listado de CEDEARs</h1>
 
 {#if data.length > 0}
-<Tabla {data} {columns} />
+	<Tabla {data} {columns} />
 {/if}
 
 </main>

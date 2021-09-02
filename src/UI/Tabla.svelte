@@ -1,32 +1,46 @@
 <script>
-    export let data;
-	export let columns;
-    /*https://gridjs.io/docs/hello-world*/
-    import Grid from "gridjs-svelte";
+  export let data;
+  export let columns;
 
-    let grid
-
-	$: if (grid) {
-		// add plugin
-		grid.updateConfig(
-			{search: {
-    			enabled: true
-			},
-			sort: {
-				enabled: true
-			},
-			fixedHeader: {
-				enabled: true
-			}
-		});
-		
-		// we need to force rendering so the plugin can show up
-		grid.forceRender()
-	}
+ console.log(parseFloat(data[0]["change"]));
 </script>
 
-<Grid bind:instance={grid} {data} {columns} />
+<div style="overflow-x:auto;">
+  <table>
+    <tr>
+      {#each columns as column, index}
+        <th>{column}</th>
+      {/each}
+    </tr>
+    {#each data as row, index}
+      <tr>
+        <td>{row.symbol}</td>
+        <td>{row.name}</td>
+        <td>{row.price}</td>
+        <td class="{parseFloat(row.change) < 0 ? 'red' : 'green'}" >{row.change}</td>
+      </tr>
+    {/each}
+  </table>
+</div>
 
-<style global>
-	@import "https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css";
-  </style>
+<style>
+  table {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  th {
+	  background-color: black;
+	  color: white;
+	  box-sizing: border-box;
+	  padding: 1rem;
+  }
+
+  .red {
+	  color:red;
+  }
+
+  .green {
+	  color: green;
+  }
+
+</style>
