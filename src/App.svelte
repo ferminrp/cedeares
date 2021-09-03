@@ -55,10 +55,11 @@
         "Listado de Cedears",
         window.location.origin + "/?search=" + searchedValue
       );
-    }
-    window.splitbee.track("Search", {
+      window.splitbee.track("Search", {
       searchedValue: searchedValue,
     });
+    }
+    
   }
 
   function urlReader() {
