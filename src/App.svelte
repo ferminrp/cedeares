@@ -1,6 +1,7 @@
 <script>
   import Tabla from "./UI/Tabla.svelte";
   import { BarLoader } from "svelte-loading-spinners";
+  import Callout from "./UI/Callout.svelte"
 
   let data = [];
   let columns = ["", "Symbol", "Name", "Price", "Daily"];
@@ -26,6 +27,8 @@
 
 <main>
   <h1>Listado de CEDEARs</h1>
+
+ <Callout color="#FDD2C1">Bienvenido! Aca vas a poder analizar todos los CEDEARs que actualmente cotizan en el mercado. Pronto vas a poder guardar tus favoritos para seguir tus inversiones.</Callout>
 
   {#if data.length > 0}
     <Tabla {data} {columns} />

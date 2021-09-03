@@ -2,7 +2,7 @@
   export let data;
   export let columns;
 
-  console.log(data.slice(0, 10));
+
 </script>
 
 <div style="overflow-x:auto;">
