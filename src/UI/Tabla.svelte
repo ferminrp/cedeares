@@ -1,8 +1,6 @@
 <script>
   export let data;
   export let columns;
-
- console.log(parseFloat(data[0]["change"]));
 </script>
 
 <div style="overflow-x:auto;">
