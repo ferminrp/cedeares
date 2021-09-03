@@ -6,7 +6,7 @@
   import Share from "./UI/Share.svelte";
 
   let data = [];
-  let columns = ["","", "Symbol", "Name", "Price", "Daily"];
+  let columns = ["","", "Ticker", "Nombre", "Precio", "Cambio"];
   let searchedValue = "";
   let filteredData = [];
   let watchlist = [];
