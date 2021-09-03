@@ -2,6 +2,23 @@
   let share = false;
   let share_url = window.location;
 
+  function sharer() {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "WebShare API Demo",
+          url: share_url,
+        })
+        .then(() => {
+          console.log("Thanks for sharing!");
+        })
+        .catch(console.error);
+    } else {
+      // fallback
+      share = true;
+    }
+  }
+
   /* copy to clipboard */
   function fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement("textarea");
@@ -50,28 +67,42 @@
     >
   </header>
   <div class="targets">
-    <a href="{'https://www.facebook.com/sharer/sharer.php?u='+share_url}" class="button">
+    <a
+      href={"https://www.facebook.com/sharer/sharer.php?u=" + share_url}
+      class="button"
+    >
       <svg>
         <use href="#facebook" />
       </svg>
       <span>Facebook</span>
     </a>
 
-    <a href="{'https://twitter.com/intent/tweet?url='+share_url+'&text=Miren%20como%20viene%20este%20cedear!'}" class="button">
+    <a
+      href={"https://twitter.com/intent/tweet?url=" +
+        share_url +
+        "&text=Miren%20como%20viene%20este%20cedear!"}
+      class="button"
+    >
       <svg>
         <use href="#twitter" />
       </svg>
       <span>Twitter</span>
     </a>
 
-    <a href="{'https://www.linkedin.com/shareArticle?mini=true&url='+share_url}" class="button">
+    <a
+      href={"https://www.linkedin.com/shareArticle?mini=true&url=" + share_url}
+      class="button"
+    >
       <svg>
         <use href="#linkedin" />
       </svg>
       <span>LinkedIn</span>
     </a>
 
-    <a href="{'mailto:info@example.com?&subject=&cc=&bcc=&body='+share_url}" class="button">
+    <a
+      href={"mailto:info@example.com?&subject=&cc=&bcc=&body=" + share_url}
+      class="button"
+    >
       <svg>
         <use href="#email" />
       </svg>
@@ -80,12 +111,14 @@
   </div>
   <div class="link">
     <div class="pen-url">{share_url}</div>
-    <button on:click="{() => copyTextToClipboard(share_url)}" class="copy-link">Copy Link</button>
+    <button on:click={() => copyTextToClipboard(share_url)} class="copy-link"
+      >Copy Link</button
+    >
   </div>
 </div>
 
 <button
-  on:click={() => (share = true)}
+  on:click={sharer}
   class="share-button"
   type="button"
   title="Share this article"
