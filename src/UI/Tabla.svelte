@@ -1,6 +1,8 @@
 <script>
   export let data;
   export let columns;
+
+  console.log(data.slice(0, 10));
 </script>
 
 <div style="overflow-x:auto;">
@@ -12,6 +14,11 @@
     </tr>
     {#each data as row, index}
       <tr>
+        {#if row.image !== undefined}
+        <td>
+          <img src="{row.image}" alt="">
+        </td>
+        {/if}
         <td>{row.symbol}</td>
         <td>{row.name}</td>
         <td>{row.price}</td>
@@ -41,9 +48,10 @@
     border-bottom: 1px solid #eff2f5;
     padding-bottom: 0.8rem;
     padding-top: 0.8rem;
+    font-weight: 600;
   }
 
-  td:nth-child(4) {
+  td:nth-child(5) {
     text-align: right;
   } 
 
@@ -53,5 +61,10 @@
 
   .green {
     color: green;
+  }
+
+  img {
+    border-radius: 50%;
+    max-height: 1.5rem;
   }
 </style>
