@@ -18,6 +18,14 @@
       symbol,
     });
   }
+
+  
+  function unwatchlist(symbol) {
+    console.log("unWatchlisted " + symbol);
+    dispatch("unwatchlisted", {
+      symbol,
+    });
+  }
 </script>
 
 <div style="overflow-x:auto;">
@@ -30,7 +38,7 @@
     {#each priorityData as row, index}
     <tr>
       {#if watchlist.includes(row.symbol)}
-        <td><Star color="#EA5525" size="1.3rem" /></td>
+        <td on:click="{unwatchlist(row.symbol)}"><Star color="#EA5525" size="1.3rem" /></td>
       {:else}
         <td on:click={watchlisted(row.symbol)}
           ><StarOutline size="1.3rem" /></td

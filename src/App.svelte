@@ -60,7 +60,7 @@
         window.location.origin + "/?search=" + searchedValue
       );
       window.splitbee.track("Search", {
-      searchedValue: searchedValue,
+      "searchedValue": searchedValue,
     });
     }
     
@@ -83,7 +83,20 @@
     console.log(JSON.parse(localStorage.getItem("watchlist")));
 
     window.splitbee.track("Watchlisted", {
-      symbol: event.detail.symbol
+      "symbol": symbol
+    });
+  }
+
+  function unwatchlisted(event) {
+    let symbol = event.detail.symbol;
+    // Add symbol to watchlist
+    watchlist = watchlist.filter((cedear) => cedear !== symbol);
+    // Save watchlist in localStorage
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    console.log(JSON.parse(localStorage.getItem("watchlist")));
+
+    window.splitbee.track("unwatchlisted", {
+      "symbol": symbol
     });
   }
 </script>
@@ -98,7 +111,7 @@
   >
   <Search on:search={search} {searchedValue} />
   {#if data.length > 0}
-    <Tabla on:watchlisted="{(e)=> watchlisted(e)}" {watchlist} data={filteredData} {columns} />
+    <Tabla on:unwatchlisted="{(e)=> unwatchlisted(e)}" on:watchlisted="{(e)=> watchlisted(e)}" {watchlist} data={filteredData} {columns} />
   {:else}
     <div class="loader">
       <BarLoader />
