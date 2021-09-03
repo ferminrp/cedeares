@@ -38,7 +38,11 @@
 
     function search(e) {
       searchedValue = e.detail.searchedValue;
+      if (searchedValue === "") {
+        window.history.pushState({page: "Listado de Cedears"}, "Listado de Cedears",window.location.origin);
+      } else {
       window.history.pushState({page: "Listado de Cedears"}, "Listado de Cedears",window.location.origin+"/?search="+searchedValue);
+    };
       window.splitbee.track("Search", {
         searchedValue: searchedValue
       });
