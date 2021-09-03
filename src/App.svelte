@@ -38,7 +38,7 @@
 
     function search(e) {
       searchedValue = e.detail.searchedValue;
-      window.history.pushState({page: "Listado de Cedears"}, "Listado de Cedears", "http://cedears.ar/?search="+searchedValue);
+      window.history.pushState({page: "Listado de Cedears"}, "Listado de Cedears",window.location.origin+"/?search="+searchedValue);
       window.splitbee.track("Search", {
         searchedValue: searchedValue
       });
@@ -49,7 +49,6 @@
       let searchParams = window.location.search;
       let searchQuery = new URLSearchParams(searchParams);
       let searchValue = searchQuery.get("search");
-      console.log(searchValue);
       searchValue !== null ? (searchedValue = searchValue) : (searchedValue = "");
     }
 </script>
