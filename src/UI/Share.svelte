@@ -6,11 +6,11 @@
     if (navigator.share) {
       navigator
         .share({
-          title: "WebShare API Demo",
+          title: "Listado de CEDEARs",
           url: share_url,
         })
         .then(() => {
-          console.log("Thanks for sharing!");
+          console.log("Gracias por compartir!");
         })
         .catch(console.error);
     } else {
