@@ -3,7 +3,7 @@
     const dispatch = createEventDispatcher();
 
 
-    let searchedValue = '';
+    export let searchedValue = '';
 
     function search() {
         dispatch('search', {
