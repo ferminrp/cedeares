@@ -16,11 +16,15 @@
 
 <style>
     input {
-        border-radius: 3px;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ff3e0080;
     }
 
     input:focus-visible {
         outline: none;
         border: 2px solid #FF3E00;
     }
+
 </style>
