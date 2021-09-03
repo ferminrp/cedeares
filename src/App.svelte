@@ -6,9 +6,10 @@
   import Share from "./UI/Share.svelte";
 
   let data = [];
-  let columns = ["", "Symbol", "Name", "Price", "Daily"];
+  let columns = ["","", "Symbol", "Name", "Price", "Daily"];
   let searchedValue = "";
   let filteredData = [];
+  let watchlist = [];
 
   $: {
     if (searchedValue === "") {
@@ -39,6 +40,9 @@
         data = [...data, row];
       }
       urlReader();
+      if (JSON.parse(localStorage.getItem("watchlist")) !== null) {
+        watchlist = JSON.parse(localStorage.getItem("watchlist"));
+      }
     });
 
   function search(e) {
@@ -69,6 +73,19 @@
     let searchValue = searchQuery.get("search");
     searchValue !== null ? (searchedValue = searchValue) : (searchedValue = "");
   }
+
+  function watchlisted(event) {
+    let symbol = event.detail.symbol;
+    // Add symbol to watchlist
+    watchlist = [...watchlist, symbol];
+    // Save watchlist in localStorage
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    console.log(JSON.parse(localStorage.getItem("watchlist")));
+
+    window.splitbee.track("Watchlisted", {
+      symbol: event.detail.symbol
+    });
+  }
 </script>
 
 <main>
@@ -81,7 +98,7 @@
   >
   <Search on:search={search} {searchedValue} />
   {#if data.length > 0}
-    <Tabla data={filteredData} {columns} />
+    <Tabla on:watchlisted="{(e)=> watchlisted(e)}" {watchlist} data={filteredData} {columns} />
   {:else}
     <div class="loader">
       <BarLoader />
