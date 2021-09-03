@@ -1,0 +1,15 @@
+{
+    "background_color": "#E94815",
+    "description": "Todas las herramientas que necesitas para invertir en CEDEARs.",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "/favicon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "CEDEARs",
+    "short_name": "CEDEARs",
+    "start_url": "/"
+  }

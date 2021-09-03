@@ -36,6 +36,7 @@
     font-family: "Nunito", sans-serif;
     border:none;
     border-collapse: collapse;
+    min-width: 100%;
   }
 
   th {
