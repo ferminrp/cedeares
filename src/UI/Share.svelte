@@ -243,7 +243,7 @@
     height: auto;
     padding-top: 8px;
     padding-bottom: 8px;
-    color: #777;
+    color: #353535;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
@@ -253,8 +253,9 @@
     text-decoration: none;
     white-space: nowrap;
     border-radius: 4px;
-    border: 1px solid #ddd;
+    border: 1px solid #ff3e0080;
     cursor: pointer;
+    background-color: #fdd2c1;
   }
 
   button:hover,
