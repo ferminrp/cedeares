@@ -31,6 +31,9 @@
 </div>
 
 <style>
+  div {
+    border-radius: 5px;
+  }
   table {
     font-family: "Nunito", sans-serif;
     border:none;
