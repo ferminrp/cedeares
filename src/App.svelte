@@ -37,6 +37,9 @@
 
     function search(e) {
       searchedValue = e.detail.searchedValue;
+      window.splitbee.track("Search", {
+        searchedValue: searchedValue
+      });
     }
 </script>
 
