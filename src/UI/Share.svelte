@@ -126,7 +126,7 @@
   <svg>
     <use href="#share-icon" />
   </svg>
-  <span>Share</span>
+  <span>Compartir</span>
 </button>
 
 <svg class="hidden">
