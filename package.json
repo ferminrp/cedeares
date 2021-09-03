@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "sirv-cli": "1.0.14",
-    "svelte-material-icons": "^1.0.3"
+    "svelte-material-icons": "1.0.3"
   }
 }
