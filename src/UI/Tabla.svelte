@@ -14,11 +14,9 @@
     </tr>
     {#each data as row, index}
       <tr>
-        {#if row.image !== undefined}
         <td>
-          <img src="{row.image}" alt="">
+          <img src="{row.image}" loading="lazy" alt="{row.name}">
         </td>
-        {/if}
         <td>{row.symbol}</td>
         <td>{row.name}</td>
         <td>{row.price}</td>
@@ -49,9 +47,9 @@
 
   td {
     border-bottom: 1px solid #eff2f5;
-    padding-bottom: 0.8rem;
-    padding-top: 0.8rem;
+    padding: 0.8rem 1rem;
     font-weight: 600;
+
   }
 
   td:nth-child(5) {
@@ -69,5 +67,9 @@
   img {
     border-radius: 50%;
     max-height: 1.5rem;
+  }
+
+  tr:hover {
+    background-color: #eff2f5;
   }
 </style>

@@ -3,7 +3,7 @@
   import { BarLoader } from 'svelte-loading-spinners'
 
   let data = [];
-  let columns = ["","Symbol","Name", "Price", "Change"];
+  let columns = ["","Symbol","Name", "Price", "Daily"];
 
   const cedeares = fetch(
     "https://sheets.googleapis.com/v4/spreadsheets/1NDOyoL3PGNe-rAm-eMHGrLKLASE6j_tUjkJ3lwXTqu0/values/main!A2:E193?key=AIzaSyBhiqVypmyLHYPmqZYtvdSvxEopcLZBdYU"
