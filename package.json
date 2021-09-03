@@ -20,7 +20,6 @@
   },
   "dependencies": {
     "gridjs": "^5.0.2",
-    "gridjs-svelte": "^1.2.0",
     "sirv-cli": "^1.0.0"
   }
 }
