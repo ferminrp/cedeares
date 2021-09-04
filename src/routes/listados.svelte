@@ -32,6 +32,9 @@
 			if (JSON.parse(localStorage.getItem('watchlist')) !== null) {
 				watchlist = JSON.parse(localStorage.getItem('watchlist'));
 			}
+		})
+		.catch(function (error) {
+			console.log(error);
 		});
 
 	function watchlisted(event) {
@@ -58,17 +61,19 @@
 	}
 
 	let estrategias = [
-    {
-        "nombre": "Vehículos Autónomos",
-        "descripcion": "Invertí en las empresas que llevan la delantera en la industria de vehículos autónomos!",
-        "cedears": ["NVDA","TM","GOOGL","TSLA"]
-    },
-    {
-        "nombre": "Inteligencia Artificial",
-        "descripcion": "Invertí en las empresas que llevan la delantera en la industria de inteligencia artificial!",
-        "cedears": ["GOOGL","NVDA","FB","AMZN"]
-    }
-];
+		{
+			nombre: 'Vehículos Autónomos',
+			descripcion:
+				'Invertí en las empresas que llevan la delantera en la industria de vehículos autónomos!',
+			cedears: ['NVDA', 'TM', 'GOOGL', 'TSLA']
+		},
+		{
+			nombre: 'Inteligencia Artificial',
+			descripcion:
+				'Invertí en las empresas que llevan la delantera en la industria de inteligencia artificial!',
+			cedears: ['GOOGL', 'NVDA', 'FB', 'AMZN']
+		}
+	];
 </script>
 
 <svelte:head>
@@ -104,10 +109,17 @@
 	>
 
 	{#each estrategias as estrategia}
-		<Estrategia on:watchlisted="{watchlisted}" on:unwatchlisted="{unwatchlisted}" cedears="{estrategia.cedears}" nombre={estrategia.nombre} descripcion={estrategia.descripcion} {data} {watchlist} {columns}/>
+		<Estrategia
+			on:watchlisted={watchlisted}
+			on:unwatchlisted={unwatchlisted}
+			cedears={estrategia.cedears}
+			nombre={estrategia.nombre}
+			descripcion={estrategia.descripcion}
+			{data}
+			{watchlist}
+			{columns}
+		/>
 	{/each}
-
-	
 </main>
 
 <Cafecito />

@@ -45,6 +45,9 @@
 			if (JSON.parse(localStorage.getItem('watchlist')) !== null) {
 				watchlist = JSON.parse(localStorage.getItem('watchlist'));
 			}
+		})
+		.catch(function (error) {
+			console.log(error);
 		});
 	function search(e) {
 		searchedValue = e.detail.searchedValue;
@@ -121,49 +124,46 @@
 
 <main>
 	<h1>Listado de CEDEARs</h1>
-  
+
 	<Callout color="#FDD2C1"
-	  >Bienvenido! Aca vas a poder analizar todos los CEDEARs que actualmente
-	  cotizan en el mercado.</Callout
+		>Bienvenido! Aca vas a poder analizar todos los CEDEARs que actualmente cotizan en el mercado.</Callout
 	>
 	<Search on:search={search} {searchedValue} />
 	{#if data.length > 0}
-	  <Tabla
-		on:unwatchlisted={(e) => unwatchlisted(e)}
-		on:watchlisted={(e) => watchlisted(e)}
-		{watchlist}
-		data={filteredData}
-		{columns}
-	  />
+		<Tabla
+			on:unwatchlisted={(e) => unwatchlisted(e)}
+			on:watchlisted={(e) => watchlisted(e)}
+			{watchlist}
+			data={filteredData}
+			{columns}
+		/>
 	{:else}
-	  <div class="loader">
-		<BarLoader />
-	  </div>
+		<div class="loader">
+			<BarLoader />
+		</div>
 	{/if}
 	{#if searchedValue.length > 0}
-	  <Share />
+		<Share />
 	{/if}
-  
-  
-  </main>
-  
-  <Cafecito />
-  
-  <style>
+</main>
+
+<Cafecito />
+
+<style>
 	main {
-	  width: 720px;
-	  margin: auto;
-	  max-width: 90vw;
-	  margin-bottom: 3rem;
+		width: 720px;
+		margin: auto;
+		max-width: 90vw;
+		margin-bottom: 3rem;
 	}
 	h1 {
-	  font-family: "Nunito", sans-serif;
-	  font-weight: 800;
+		font-family: 'Nunito', sans-serif;
+		font-weight: 800;
 	}
 	.loader {
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  height: 20rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 20rem;
 	}
-  </style>
+</style>
