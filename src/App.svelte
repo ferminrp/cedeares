@@ -106,8 +106,7 @@
 
   <Callout color="#FDD2C1"
     >Bienvenido! Aca vas a poder analizar todos los CEDEARs que actualmente
-    cotizan en el mercado. Pronto vas a poder guardar tus favoritos para seguir
-    tus inversiones.</Callout
+    cotizan en el mercado.</Callout
   >
   <Search on:search={search} {searchedValue} />
   {#if data.length > 0}
