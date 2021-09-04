@@ -94,6 +94,7 @@
     color: white;
     box-sizing: border-box;
     padding: 1rem;
+    text-align: left;
   }
 
   td {
