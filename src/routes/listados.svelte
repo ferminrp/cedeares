@@ -94,7 +94,7 @@
 	>
 
 	{#each estrategias as estrategia}
-		<Estrategia cedears="{estrategia.cedears}" nombre={estrategia.nombre} descripcion={estrategia.descripcion} {data} {watchlist} {columns}/>
+		<Estrategia on:watchlisted="{watchlisted}" on:unwatchlisted="{unwatchlisted}" cedears="{estrategia.cedears}" nombre={estrategia.nombre} descripcion={estrategia.descripcion} {data} {watchlist} {columns}/>
 	{/each}
 
 	
