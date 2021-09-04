@@ -8,6 +8,7 @@
 	import Callout from '$lib/UI/Callout.svelte';
 	import Share from '$lib/UI/Share.svelte';
 	import Cafecito from '$lib/UI/Cafecito.svelte';
+	import Nav from '$lib/UI/Nav.svelte';
 	let data = [];
 	let columns = ['', '', 'Ticker', 'Nombre', 'Precio', 'Cambio'];
 
@@ -100,12 +101,11 @@
 </svelte:head>
 
 <main>
-	<h1>Listados de la Comunidad</h1>
+	<h1>Packs de la Comunidad</h1>
 
 	<Callout color="#FDD2C1"
 		>Estos listados fueron sugeridos por la comunidad, podes sugerir nuevos <a
-			href="https://google.com">acá</a
-		>!</Callout
+			href="https://tally.so/r/wvNk4w" target="_blank">acá</a>!</Callout
 	>
 
 	{#each estrategias as estrategia}
@@ -124,12 +124,13 @@
 
 <Cafecito />
 
+<Nav page="listados" />
+
 <style>
 	main {
 		width: 720px;
-		margin: auto;
+		margin: 2rem auto 8rem auto;
 		max-width: 90vw;
-		margin-bottom: 3rem;
 	}
 	h1,
 	h3 {

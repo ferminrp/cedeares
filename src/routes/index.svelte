@@ -9,6 +9,7 @@
 	import Search from '$lib/UI/Search.svelte';
 	import Share from '$lib/UI/Share.svelte';
 	import Cafecito from '$lib/UI/Cafecito.svelte';
+	import Nav from '$lib/UI/Nav.svelte';
 	let data = [];
 	let columns = ['', '', 'Ticker', 'Nombre', 'Precio', 'Cambio'];
 	let searchedValue = '';
@@ -149,12 +150,13 @@
 
 <Cafecito />
 
+<Nav />
+
 <style>
 	main {
 		width: 720px;
-		margin: auto;
+		margin: 2rem auto;
 		max-width: 90vw;
-		margin-bottom: 3rem;
 	}
 	h1 {
 		font-family: 'Nunito', sans-serif;
