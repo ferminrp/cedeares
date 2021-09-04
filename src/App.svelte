@@ -4,6 +4,7 @@
   import Callout from "./UI/Callout.svelte";
   import Search from "./UI/Search.svelte";
   import Share from "./UI/Share.svelte";
+  import Cafecito from "./UI/Cafecito.svelte";
 
   let data = [];
   let columns = ["", "", "Ticker", "Nombre", "Precio", "Cambio"];
@@ -124,7 +125,11 @@
   {#if searchedValue.length > 0}
     <Share />
   {/if}
+
+
 </main>
+
+<Cafecito />
 
 <style>
   main {

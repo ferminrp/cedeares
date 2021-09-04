@@ -81,6 +81,7 @@
 <style>
   div {
     border-radius: 5px;
+    margin-bottom: 3rem;
   }
   table {
     font-family: "Nunito", sans-serif;
