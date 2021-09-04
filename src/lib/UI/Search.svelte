@@ -20,6 +20,8 @@
         padding: 0.5rem 1rem;
         margin-bottom: 1rem;
         border: 1px solid #ff3e0080;
+        font-family: "Nunito", sans-serif;
+        font-weight: 300;
     }
 
     input:focus-visible {
