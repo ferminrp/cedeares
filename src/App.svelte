@@ -6,7 +6,7 @@
   import Share from "./UI/Share.svelte";
 
   let data = [];
-  let columns = ["","", "Ticker", "Nombre", "Precio", "Cambio"];
+  let columns = ["", "", "Ticker", "Nombre", "Precio", "Cambio"];
   let searchedValue = "";
   let filteredData = [];
   let watchlist = [];
@@ -60,10 +60,9 @@
         window.location.origin + "/?search=" + searchedValue
       );
       window.splitbee.track("Search", {
-      "searchedValue": searchedValue,
-    });
+        searchedValue: searchedValue,
+      });
     }
-    
   }
 
   function urlReader() {
@@ -83,7 +82,7 @@
     console.log(JSON.parse(localStorage.getItem("watchlist")));
 
     window.splitbee.track("Watchlisted", {
-      "symbol": symbol
+      symbol: symbol,
     });
   }
 
@@ -96,7 +95,7 @@
     console.log(JSON.parse(localStorage.getItem("watchlist")));
 
     window.splitbee.track("unwatchlisted", {
-      "symbol": symbol
+      symbol: symbol,
     });
   }
 </script>
@@ -110,7 +109,13 @@
   >
   <Search on:search={search} {searchedValue} />
   {#if data.length > 0}
-    <Tabla on:unwatchlisted="{(e)=> unwatchlisted(e)}" on:watchlisted="{(e)=> watchlisted(e)}" {watchlist} data={filteredData} {columns} />
+    <Tabla
+      on:unwatchlisted={(e) => unwatchlisted(e)}
+      on:watchlisted={(e) => watchlisted(e)}
+      {watchlist}
+      data={filteredData}
+      {columns}
+    />
   {:else}
     <div class="loader">
       <BarLoader />
@@ -126,6 +131,7 @@
     width: 720px;
     margin: auto;
     max-width: 90vw;
+    margin-bottom: 3rem;
   }
 
   h1 {
