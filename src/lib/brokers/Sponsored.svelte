@@ -1,0 +1,27 @@
+<a href="mailto:cedears@ferminrp.com">
+    <article>
+        <p>Publicite Aquí</p>
+    </article>
+</a>
+
+<style>
+    a {
+        text-decoration: none;
+        color: #000;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    article {
+        width: 100%;
+        height: 100%;
+        background-color:rgb(253, 210, 193);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+        padding: 2rem 0;
+        margin-top: 2rem;
+        box-sizing: border-box;
+    }
+</style>
+
