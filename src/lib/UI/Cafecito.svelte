@@ -1,4 +1,4 @@
-<a href="https://cafecito.app/ferminrp">Ayudame con un Cafe ☕</a>
+<a data-splitbee-event="Cafecito" href="https://cafecito.app/ferminrp">Ayudame con un Cafe ☕</a>
 
 <style>
   a {
@@ -7,6 +7,7 @@
     right: 1rem;
     font-family: "Nunito", sans-serif;
     font-weight: 800;
+    text-decoration: none;
   }
 
   a:hover {

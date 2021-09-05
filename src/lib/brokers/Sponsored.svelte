@@ -1,4 +1,4 @@
-<a href="mailto:cedears@ferminrp.com">
+<a data-splitbee-event="Publicite Aqui" href="mailto:cedears@ferminrp.com">
     <article>
         <p>Publicite Aquí</p>
     </article>
