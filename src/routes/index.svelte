@@ -1,5 +1,5 @@
 <script context="module">
-	export const prerender = false;
+	export const prerender = true;
 </script>
 
 <script>
@@ -167,5 +167,14 @@
 		justify-content: center;
 		align-items: center;
 		height: 20rem;
+	}
+	@media screen and (max-width: 700px) {
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		main {
+			margin-bottom: 6rem;
+		}
 	}
 </style>
