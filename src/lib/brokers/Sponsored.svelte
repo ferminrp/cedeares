@@ -9,6 +9,7 @@
         text-decoration: none;
         color: #000;
         font-family: 'Nunito', sans-serif;
+        font-weight: bold;
     }
 
     article {
