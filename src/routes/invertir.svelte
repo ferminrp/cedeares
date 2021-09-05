@@ -1,3 +1,27 @@
+<svelte:head>
+	<!-- Primary Meta Tags -->
+	<title>Invertir</title>
+	<meta name="title" content="Donde invertir en CEDEARs" />
+	<meta name="description" content="Listado de brokers para invertir en CEDEARs" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://cedears.ar/" />
+	<meta property="og:title" content="Donde invertir en CEDEARs" />
+	<meta property="og:description" content="Listado de brokers para invertir en CEDEARs" />
+	<meta property="og:image" content="https://cedears.ar/assets/meta_image.jpg" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@ferminrp" />
+	<meta name="twitter:creator" content="@ferminrp" />
+	<meta property="twitter:url" content="https://cedears.ar/" />
+	<meta property="twitter:title" content="Donde invertir en CEDEARs" />
+	<meta property="twitter:description" content="Listado de brokers para invertir en CEDEARs" />
+	<meta property="twitter:image" content="https://cedears.ar/assets/meta_image.jpg" />
+</svelte:head>
+
+
 <script context="module">
 	export const prerender = true;
 </script>
