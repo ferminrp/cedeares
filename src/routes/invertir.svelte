@@ -30,6 +30,7 @@
 	import Nav from '$lib/UI/Nav.svelte';
 	import Sponsored from '$lib/brokers/Sponsored.svelte';
 	import Broker from '$lib/brokers/Broker.svelte';
+    import Cafecito from '$lib/UI/Cafecito.svelte';
 
 	let brokers = [
 		{
@@ -92,6 +93,8 @@
 </main>
 
 <Nav page="invertir" />
+
+<Cafecito />
 
 <style>
 	main {
