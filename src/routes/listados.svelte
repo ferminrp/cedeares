@@ -3,29 +3,17 @@
 </script>
 
 <script>
-	import Tabla from '$lib/UI/Tabla.svelte';
+	import Estrategia from '$lib/estrategias/Estrategia.svelte';
 	import { BarLoader } from 'svelte-loading-spinners';
 	import Callout from '$lib/UI/Callout.svelte';
-	import Search from '$lib/UI/Search.svelte';
 	import Share from '$lib/UI/Share.svelte';
 	import Cafecito from '$lib/UI/Cafecito.svelte';
 	import Nav from '$lib/UI/Nav.svelte';
 	let data = [];
 	let columns = ['', '', 'Ticker', 'Nombre', 'Precio', 'Cambio'];
-	let searchedValue = '';
-	let filteredData = [];
+
 	let watchlist = [];
-	$: {
-		if (searchedValue === '') {
-			filteredData = data;
-		} else {
-			filteredData = data.filter(
-				(cedear) =>
-					cedear.symbol.includes(searchedValue.toUpperCase()) ||
-					cedear.name.toUpperCase().includes(searchedValue.toUpperCase())
-			);
-		}
-	}
+
 	const cedeares = fetch(
 		'https://sheets.googleapis.com/v4/spreadsheets/1NDOyoL3PGNe-rAm-eMHGrLKLASE6j_tUjkJ3lwXTqu0/values/main!A2:E193?key=AIzaSyBhiqVypmyLHYPmqZYtvdSvxEopcLZBdYU'
 	)
@@ -42,7 +30,6 @@
 					: (row.image = 'https://i.imgur.com/ERGz8GO.png');
 				data = [...data, row];
 			}
-			urlReader();
 			if (JSON.parse(localStorage.getItem('watchlist')) !== null) {
 				watchlist = JSON.parse(localStorage.getItem('watchlist'));
 			}
@@ -50,32 +37,7 @@
 		.catch(function (error) {
 			console.log(error);
 		});
-	function search(e) {
-		searchedValue = e.detail.searchedValue;
-		if (searchedValue === '') {
-			window.history.pushState(
-				{ page: 'Listado de Cedears' },
-				'Listado de Cedears',
-				window.location.origin
-			);
-		} else {
-			window.history.pushState(
-				{ page: 'Listado de Cedears' },
-				'Listado de Cedears',
-				window.location.origin + '/?search=' + searchedValue
-			);
-			window.splitbee.track('Search', {
-				searchedValue: searchedValue
-			});
-		}
-	}
-	function urlReader() {
-		// Read search params in url
-		let searchParams = window.location.search;
-		let searchQuery = new URLSearchParams(searchParams);
-		let searchValue = searchQuery.get('search');
-		searchValue !== null ? (searchedValue = searchValue) : (searchedValue = '');
-	}
+
 	function watchlisted(event) {
 		let symbol = event.detail.symbol;
 		// Add symbol to watchlist
@@ -98,6 +60,21 @@
 			symbol: symbol
 		});
 	}
+
+	let estrategias = [
+		{
+			nombre: 'Vehículos Autónomos',
+			descripcion:
+				'Invertí en las empresas que llevan la delantera en la industria de vehículos autónomos!',
+			cedears: ['NVDA', 'TM', 'GOOGL', 'TSLA']
+		},
+		{
+			nombre: 'Inteligencia Artificial',
+			descripcion:
+				'Con el impulso de la revolución tecnológica actual, se prevé un aumento en las ganancias de muchas industrias. Invertí en las acciones mas demandadas!',
+			cedears: ['GOOGL', 'NVDA', 'FB', 'AMZN']
+		}
+	];
 </script>
 
 <svelte:head>
@@ -124,48 +101,60 @@
 </svelte:head>
 
 <main>
-	<h1>Listado de CEDEARs</h1>
+	<h1>Packs de la Comunidad</h1>
 
 	<Callout color="#FDD2C1"
-		>Bienvenido! Aca vas a poder analizar todos los CEDEARs que actualmente cotizan en el mercado.</Callout
+		>Estos listados fueron sugeridos por la comunidad, podes sugerir nuevos <a
+			href="https://tally.so/r/wvNk4w"
+			target="_blank">acá</a
+		>!</Callout
 	>
-	<Search on:search={search} {searchedValue} />
-	{#if data.length > 0}
-		<Tabla
-			on:unwatchlisted={(e) => unwatchlisted(e)}
-			on:watchlisted={(e) => watchlisted(e)}
+
+	{#each estrategias as estrategia}
+		<Estrategia
+			on:watchlisted={watchlisted}
+			on:unwatchlisted={unwatchlisted}
+			cedears={estrategia.cedears}
+			nombre={estrategia.nombre}
+			descripcion={estrategia.descripcion}
+			{data}
 			{watchlist}
-			data={filteredData}
 			{columns}
 		/>
-	{:else}
-		<div class="loader">
-			<BarLoader />
-		</div>
-	{/if}
-	{#if searchedValue.length > 0}
-		<Share />
-	{/if}
+	{/each}
 </main>
 
 <Cafecito />
 
-<Nav />
+<Nav page="listados" />
 
 <style>
 	main {
 		width: 720px;
-		margin: 2rem auto;
+		margin: 2rem auto 8rem auto;
 		max-width: 90vw;
 	}
-	h1 {
+	h1,
+	h3 {
 		font-family: 'Nunito', sans-serif;
 		font-weight: 800;
 	}
+
 	.loader {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		height: 20rem;
+	}
+
+	/* Media query max width 700px */
+	@media screen and (max-width: 700px) {
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		main {
+			margin-bottom: 6rem;
+		}
 	}
 </style>
