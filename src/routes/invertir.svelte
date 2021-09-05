@@ -96,7 +96,7 @@
 <style>
 	main {
 		width: 720px;
-		margin: 2rem auto;
+		margin: 2rem auto 5rem auto;
 		max-width: 90vw;
 	}
 	h1 {
