@@ -71,7 +71,7 @@
 		{
 			nombre: 'Inteligencia Artificial',
 			descripcion:
-				'Invertí en las empresas que llevan la delantera en la industria de inteligencia artificial!',
+				'Con el impulso de la revolución tecnológica actual, se prevé un aumento en las ganancias de muchas industrias. Invertí en las acciones mas demandadas!',
 			cedears: ['GOOGL', 'NVDA', 'FB', 'AMZN']
 		}
 	];
@@ -105,7 +105,9 @@
 
 	<Callout color="#FDD2C1"
 		>Estos listados fueron sugeridos por la comunidad, podes sugerir nuevos <a
-			href="https://tally.so/r/wvNk4w" target="_blank">acá</a>!</Callout
+			href="https://tally.so/r/wvNk4w"
+			target="_blank">acá</a
+		>!</Callout
 	>
 
 	{#each estrategias as estrategia}
@@ -137,10 +139,22 @@
 		font-family: 'Nunito', sans-serif;
 		font-weight: 800;
 	}
+
 	.loader {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		height: 20rem;
+	}
+
+	/* Media query max width 700px */
+	@media screen and (max-width: 700px) {
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		main {
+			margin-bottom: 6rem;
+		}
 	}
 </style>
