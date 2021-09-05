@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
-	  
-		<link rel="manifest" href="/manifest.webmanifest">
-		<script async src="https://cdn.splitbee.io/sb.js"></script>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link
-      rel="apple-touch-icon"
-      sizes="192x192"
-      href="./favicon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./favicon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./favicon.png"
-    />
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 
-		%svelte.head%
+        <link rel="manifest" href="/manifest.webmanifest">
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="apple-touch-icon" sizes="192x192" href="./favicon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png"/>
 
-    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-<noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
-	</head>
-	<body>
-		<div id="svelte">%svelte.body%</div>
-	</body>
+        %svelte.head%
+
+        <script>
+            window.sa_event = window.sa_event || function () {
+                var a = [].slice.call(arguments);
+                window.sa_event.q ? window.sa_event.q.push(a) : window.sa_event.q = [a]
+            };
+        </script>
+        <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"/></noscript>
+    </head>
+    <body>
+        <div id="svelte">%svelte.body%</div>
+    </body>
 </html>
