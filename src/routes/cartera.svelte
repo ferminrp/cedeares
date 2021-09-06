@@ -59,6 +59,8 @@
 		cartera = cartera.filter((item) => item.symbol !== e.detail.symbol);
 		cartera = [...cartera, newAddition];
 		localStorage.setItem('cartera', JSON.stringify(cartera));
+		selectedCedear = '';
+		unidades = '';
 	}
 
 	$: {
@@ -160,7 +162,7 @@
 <style>
 	main {
 		width: 800px;
-		margin: 2rem auto;
+		margin: 2rem auto 5rem auto;
 		max-width: 90vw;
 	}
 	h1 {
