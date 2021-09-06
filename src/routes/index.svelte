@@ -125,7 +125,7 @@
 <main>
 	<h1>Listado de CEDEARs</h1>
 
-	<Callout color="#FDD2C1"
+	<Callout color="#b4c5ff"
 		>Bienvenido! Aca vas a poder analizar todos los CEDEARs que actualmente cotizan en el mercado.</Callout
 	>
 	<Search on:search={search} {searchedValue} />

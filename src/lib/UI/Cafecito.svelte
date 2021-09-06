@@ -8,7 +8,7 @@
     font-family: "Nunito", sans-serif;
     font-weight: 800;
     text-decoration: none;
-    color:#EA5525
+    color:#4E76FE;
   }
 
   a:hover {

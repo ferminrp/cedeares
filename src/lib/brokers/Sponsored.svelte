@@ -15,7 +15,7 @@
     article {
         width: 100%;
         height: 100%;
-        background-color:rgb(253, 210, 193);
+        background-color: #b4c5ff;
         display: flex;
         justify-content: center;
         align-items: center;

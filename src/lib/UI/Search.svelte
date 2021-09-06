@@ -19,7 +19,7 @@
         border-radius: 5px;
         padding: 0.5rem 1rem;
         margin-bottom: 1rem;
-        border: 1px solid #ff3e0080;
+        border: 1px solid #4E76FE80;
         font-family: "Nunito", sans-serif;
         font-weight: 300;
     }
