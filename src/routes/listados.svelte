@@ -131,8 +131,9 @@
 <style>
 	main {
 		width: 720px;
-		margin: 2rem auto 8rem auto;
+		margin: 2rem auto 15rem auto;
 		max-width: 90vw;
+		padding-bottom: 5rem;
 	}
 	h1,
 	h3 {
