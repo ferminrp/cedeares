@@ -80,7 +80,7 @@
 		// Save watchlist in localStorage
 		localStorage.setItem('watchlist', JSON.stringify(watchlist));
 		console.log(JSON.parse(localStorage.getItem('watchlist')));
-		sa_event("Watchlisted "+symbol);
+		sa_event('Watchlisted ' + symbol);
 		window.splitbee.track('Watchlisted', {
 			symbol: symbol
 		});
@@ -92,7 +92,7 @@
 		// Save watchlist in localStorage
 		localStorage.setItem('watchlist', JSON.stringify(watchlist));
 		console.log(JSON.parse(localStorage.getItem('watchlist')));
-		sa_event("Unwatchlisted "+symbol);
+		sa_event('Unwatchlisted ' + symbol);
 		window.splitbee.track('unwatchlisted', {
 			symbol: symbol
 		});
