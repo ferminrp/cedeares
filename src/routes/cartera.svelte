@@ -64,6 +64,7 @@
 		localStorage.setItem('cartera', JSON.stringify(cartera));
 		selectedCedear = '';
 		unidades = '';
+		sa_event('Cartera ' + e.detail.symbol);
 	}
 
 	$: {
