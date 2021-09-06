@@ -21,7 +21,7 @@
 	let loading = true;
 	let valorTotal;
 	let selectedCedear;
-	let unidades
+	let unidades;
 
 	const cedeares = fetch(
 		'https://sheets.googleapis.com/v4/spreadsheets/1NDOyoL3PGNe-rAm-eMHGrLKLASE6j_tUjkJ3lwXTqu0/values/main!A2:E193?key=AIzaSyBhiqVypmyLHYPmqZYtvdSvxEopcLZBdYU'
@@ -42,7 +42,10 @@
 			if (JSON.parse(localStorage.getItem('watchlist')) !== null) {
 				watchlist = JSON.parse(localStorage.getItem('watchlist'));
 			}
-			if (JSON.parse(localStorage.getItem('cartera')) !== null && JSON.parse(localStorage.getItem('cartera')).length > 0) {
+			if (
+				JSON.parse(localStorage.getItem('cartera')) !== null &&
+				JSON.parse(localStorage.getItem('cartera')).length > 0
+			) {
 				cartera = JSON.parse(localStorage.getItem('cartera'));
 			}
 			loading = false;
@@ -67,16 +70,21 @@
 		if (cartera.length > 0) {
 			let withoutPercent = [];
 			cartera.forEach((item) => {
-				let nuevoObjeto = {}
+				let nuevoObjeto = {};
 				nuevoObjeto.symbol = item.symbol;
 				nuevoObjeto.unidades = item.unidades;
-				nuevoObjeto.price = parseFloat(data.find((element) => element.symbol === item.symbol).price.substring(1).replace(',', ''));
+				nuevoObjeto.price = parseFloat(
+					data
+						.find((element) => element.symbol === item.symbol)
+						.price.substring(1)
+						.replace(',', '')
+				);
 				nuevoObjeto.totalValue = nuevoObjeto.unidades * nuevoObjeto.price;
 				nuevoObjeto.name = data.find((element) => element.symbol === item.symbol).name;
 				nuevoObjeto.change = data.find((element) => element.symbol === item.symbol).change;
 				nuevoObjeto.image = data.find((element) => element.symbol === item.symbol).image;
 				withoutPercent.push(nuevoObjeto);
-			})
+			});
 			let valorPortfolio = withoutPercent.reduce((acc, item) => acc + item.totalValue, 0);
 			valorTotal = valorPortfolio;
 			let withPercent = [];
@@ -84,19 +92,19 @@
 				let nuevoObjeto = item;
 				nuevoObjeto.percent = (item.totalValue / valorPortfolio) * 100;
 				withPercent.push(nuevoObjeto);
-			})
+			});
 			carteraEnriquecida = withPercent;
 			console.log(withPercent);
 		}
 	}
 
-	function deleteItem(event){
+	function deleteItem(event) {
 		let symbol = event.detail.symbol;
 		cartera = cartera.filter((item) => item.symbol !== symbol);
 		localStorage.setItem('cartera', JSON.stringify(cartera));
 	}
 
-	function editItem(event){
+	function editItem(event) {
 		selectedCedear = event.detail.symbol;
 		unidades = event.detail.unidades;
 		console.log(event.detail.unidades);
@@ -130,9 +138,9 @@
 
 <main>
 	{#if loading}
-	<div class="loader">
-		<BarLoader />
-	</div>
+		<div class="loader">
+			<BarLoader />
+		</div>
 	{/if}
 	{#if adding}
 		<NuevaInversion
@@ -146,9 +154,17 @@
 		/>
 	{:else if !adding && !loading && cartera.length > 0}
 		<h1>Tu cartera</h1>
-		<CarteraUsuario on:editItem="{(event) => editItem(event)}" on:deleteItem="{(event)=> deleteItem(event)}" {carteraEnriquecida} />
-		<ValorTotal>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valorTotal)}</ValorTotal>
-		<Button on:click="{()=> adding = true}">Añadir Inversion</Button>
+		<CarteraUsuario
+			on:editItem={(event) => editItem(event)}
+			on:deleteItem={(event) => deleteItem(event)}
+			{carteraEnriquecida}
+		/>
+		<ValorTotal
+			>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(
+				valorTotal
+			)}</ValorTotal
+		>
+		<Button on:click={() => (adding = true)}>Añadir Inversion</Button>
 	{/if}
 	{#if cartera.length == 0 && !adding && !loading}
 		<CarteraEmpty on:click={() => (adding = true)} />
@@ -183,5 +199,11 @@
 		main {
 			margin-bottom: 6rem;
 		}
+
+		* {
+			-webkit-text-size-adjust: none;
+			text-size-adjust: none;
+		}
+
 	}
 </style>

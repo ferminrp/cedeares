@@ -95,4 +95,9 @@
 		margin-top: -2rem;
 		margin-bottom: 2rem;
 	}
+
+	* {
+			-webkit-text-size-adjust: none;
+			text-size-adjust: none;
+		}
 </style>
