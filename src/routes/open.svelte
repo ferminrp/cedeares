@@ -1,5 +1,5 @@
 <script context="module">
-	export const prerender = true;
+	export const prerender = false;
 </script>
 
 <script>
@@ -46,7 +46,7 @@
           this chart.
         </p>
       </div>
-      <script src="https://scripts.simpleanalyticscdn.com/embed.js"></script>
+      <script src="https://scripts.simpleanalyticscdn.com/embed.js" async></script>
 </main>
 
 <Cafecito />
