@@ -156,6 +156,7 @@
 		width: 720px;
 		margin: 2rem auto;
 		max-width: 90vw;
+		margin-bottom: 8rem;
 	}
 	h1 {
 		font-family: 'Nunito', sans-serif;
