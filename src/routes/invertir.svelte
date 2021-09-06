@@ -88,7 +88,7 @@
 	<h1>Brokers Recomendados</h1>
 	<Sponsored />
 	{#each brokersShuffled as broker, i}
-		<Broker id="{i}" nombre={broker.nombre} logo={broker.logo} url={broker.url} />
+		<Broker on:click="{() => sa_event('broker.nombre')}" id="{i}" nombre={broker.nombre} logo={broker.logo} url={broker.url} />
 	{/each}
 </main>
 
