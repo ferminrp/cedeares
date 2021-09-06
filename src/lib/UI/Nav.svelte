@@ -143,6 +143,7 @@
 
 	.orange {
 		color: #4E76FE;
+		font-weight: bold;
 	}
 
 	/* CELLPHONE MEDIA QUERY */
