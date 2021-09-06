@@ -1,4 +1,13 @@
-<button on:click><slot><!-- optional fallback --></slot></button>
+<script>
+    export let disabled = false;
+</script>
+
+{#if disabled}
+    <button disabled><slot><!-- optional fallback --></slot></button>
+{:else}
+    <button on:click><slot><!-- optional fallback --></slot></button>
+{/if}
+
 
 <style>
     button {
@@ -12,5 +21,9 @@
         font-weight: bold;
         margin-top: 2rem;
         cursor: pointer;
+    }
+
+    button:disabled {
+        background-color: gray;
     }
 </style>

@@ -10,10 +10,23 @@
     export let selectedCedear = ''
     export let unidades = 1
 
+	let error;
 
-    let symbolsCartera = cartera.map(a => a.symbol);
+	$: {
+		if (selectedCedear.length > 0 && !symbolsCartera.includes(selectedCedear)) {
+			error = true;
+		} else {
+			error = false;
+		}
+	}
+
+
+    let symbolsCartera = cartera.map((cedear) => cedear.symbol);
 
 	$: filteredData = data.filter(item => !symbolsCartera.includes(item.symbol));
+
+	$: filteredDataSymbols = filteredData.map(item => item.symbol);
+	console.log(filteredDataSymbols);
 
 	function addInversion() {
         dispatch('new',{
@@ -33,6 +46,9 @@
 
 	<label for="cedear">Que CEDEAR queres sumar?</label>
 	<input bind:value={selectedCedear} type="text" id="cedear" name="cedear" list="cedeares" />
+	{#if error}
+		<p class="error">Ese no es un ticker valido</p>
+	{/if}
 
 	<datalist id="cedeares">
 		{#each filteredData as cedear, i}
@@ -44,7 +60,7 @@
     <input type="number" bind:value={unidades} />
 
 	<div class="ctas">
-		<Button on:click={addInversion}>Añadir</Button>
+		<Button disabled="{error}" on:click={addInversion}>Añadir</Button>
 		<p on:click={cancelar}>Cancelar</p>
 	</div>
 </div>
@@ -73,4 +89,10 @@
         border-radius: 0.3rem;
         border: 1px solid #ccc;
     }
+
+	.error {
+		color: red;
+		margin-top: -2rem;
+		margin-bottom: 2rem;
+	}
 </style>
