@@ -100,6 +100,7 @@
 </script>
 
 <svelte:head>
+    <script src="https://scripts.simpleanalyticscdn.com/embed.js"></script>
 	<!-- Primary Meta Tags -->
 	<title>Open Stats</title>
 	<meta name="title" content="Estadisticas abiertas de Cedears.ar" />
