@@ -23,7 +23,7 @@
 
     let symbolsCartera = cartera.map((cedear) => cedear.symbol);
 
-	$: filteredData = data.filter(item => !symbolsCartera.includes(item.symbol));
+	$: filteredData = data/*.filter(item => !symbolsCartera.includes(item.symbol))*/;
 
 	$: filteredDataSymbols = filteredData.map(item => item.symbol);
 	console.log(filteredDataSymbols);
