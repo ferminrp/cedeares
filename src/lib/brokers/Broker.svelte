@@ -5,7 +5,7 @@
 </script>
 
 
-<a href="{url}" data-splitbee-event="{nombre}">
+<a href="{url}" data-splitbee-event="{nombre}" target="_blank">
     <article>
         <img src="{logo}" alt="">
         <h3>{nombre}</h3>
