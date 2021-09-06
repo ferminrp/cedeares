@@ -129,7 +129,7 @@
         This website has <span id="pageviews"></span> page views in the last month.
       </p>
       <div
-        data-sa-graph-url="https://simpleanalytics.com/example.com?color=75b5aa"
+        data-sa-graph-url="https://simpleanalytics.com/cedears.ar?color=eb5425"
         data-sa-page-views-selector="#pageviews"
       >
         <p>
