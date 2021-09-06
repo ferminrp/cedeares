@@ -142,7 +142,7 @@
 	}
 
 	.orange {
-		color: #eb5425;
+		color: #4E76FE;
 	}
 
 	/* CELLPHONE MEDIA QUERY */

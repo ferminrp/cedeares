@@ -82,12 +82,16 @@
   div {
     border-radius: 5px;
     margin-bottom: 3rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
   table {
     font-family: "Nunito", sans-serif;
     border: none;
     border-collapse: collapse;
     min-width: 100%;
+    background-color: white;
+    border-radius: 1rem;
+
   }
 
   th {

@@ -103,7 +103,7 @@
 <main>
 	<h1>Packs de la Comunidad</h1>
 
-	<Callout color="#FDD2C1"
+	<Callout color="#b4c5ff"
 		>Estos listados fueron sugeridos por la comunidad, podes sugerir nuevos <a
 			href="https://tally.so/r/wvNk4w"
 			target="_blank">acá</a

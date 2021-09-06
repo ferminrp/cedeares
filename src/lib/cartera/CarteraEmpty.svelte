@@ -51,6 +51,6 @@
     svg {
         width: 100px;
         height: 100px;
-        color: #eb5425;
+        color: #4E76FE;
     }
 </style>
