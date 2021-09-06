@@ -1,14 +1,13 @@
 <script context="module">
-	export const prerender = false;
+	export const prerender = true;
 </script>
 
 <script>
-    import Cafecito from '$lib/UI/Cafecito.svelte'
-    import Nav from '$lib/UI/Nav.svelte'
+	import Cafecito from '$lib/UI/Cafecito.svelte';
+	import Nav from '$lib/UI/Nav.svelte';
 </script>
 
 <svelte:head>
-    <script src="https://scripts.simpleanalyticscdn.com/embed.js"></script>
 	<!-- Primary Meta Tags -->
 	<title>Open Stats</title>
 	<meta name="title" content="Estadisticas abiertas de Cedears.ar" />
@@ -34,19 +33,14 @@
 <main>
 	<h1>Open Stats</h1>
 
-    <p>
-        This website has <span id="pageviews"></span> page views in the last month.
-      </p>
-      <div
-        data-sa-graph-url="https://simpleanalytics.com/cedears.ar?color=eb5425"
-        data-sa-page-views-selector="#pageviews"
-      >
-        <p>
-          Ad blockers don't like the Simple Analytics embed, disable yours to view
-          this chart.
-        </p>
-      </div>
-      <script src="https://scripts.simpleanalyticscdn.com/embed.js" async></script>
+	<h3>Trafico de los ultimos 30 dias</h3>
+	<div class="wrapper">
+		<iframe
+			src="https://simpleanalytics.com/cedears.ar?color=eb5425&embed=true&graph_id=1"
+			frameborder="0"
+		/>
+	</div>
+	<p>Comenzó a trackear el 2021-09-05</p>
 </main>
 
 <Cafecito />
@@ -58,11 +52,24 @@
 		width: 720px;
 		margin: 2rem auto;
 		max-width: 90vw;
-        font-family: 'Nunito', sans-serif;
+		font-family: 'Nunito', sans-serif;
 	}
 	h1 {
 		font-family: 'Nunito', sans-serif;
 		font-weight: 800;
 	}
 
+	.wrapper {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+	}
+	.wrapper iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 </style>
