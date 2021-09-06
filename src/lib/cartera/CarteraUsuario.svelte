@@ -143,6 +143,11 @@
 		text-align: right;
 	}
 
+  
+	td:nth-child(5) {
+		text-align: center;
+	}
+
 	.red {
 		color: red;
 	}

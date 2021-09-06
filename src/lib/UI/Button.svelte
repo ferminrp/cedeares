@@ -8,7 +8,7 @@
         color: white;
         font-family: "Nunito", sans-serif;
         padding: 1rem 0;
-        width: 80%;
+        width: 100%;
         font-weight: bold;
         margin-top: 2rem;
         cursor: pointer;
