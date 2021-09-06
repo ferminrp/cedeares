@@ -162,7 +162,7 @@
 <style>
 	main {
 		width: 800px;
-		margin: 2rem auto;
+		margin: 2rem auto 5rem auto;
 		max-width: 90vw;
 	}
 	h1 {
