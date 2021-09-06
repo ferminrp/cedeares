@@ -13,7 +13,7 @@
 	let error;
 
 	$: {
-		if (selectedCedear.length > 0 && !symbolsCartera.includes(selectedCedear)) {
+		if (selectedCedear.length > 0 && !filteredDataSymbols.includes(selectedCedear)) {
 			error = true;
 		} else {
 			error = false;
