@@ -42,7 +42,7 @@
 			if (JSON.parse(localStorage.getItem('watchlist')) !== null) {
 				watchlist = JSON.parse(localStorage.getItem('watchlist'));
 			}
-			if (JSON.parse(localStorage.getItem('cartera')).length > 0) {
+			if (JSON.parse(localStorage.getItem('cartera')) !== null && JSON.parse(localStorage.getItem('cartera')).length > 0) {
 				cartera = JSON.parse(localStorage.getItem('cartera'));
 			}
 			loading = false;
@@ -142,7 +142,7 @@
 			{cartera}
 			{data}
 		/>
-	{:else if !adding && !loading}
+	{:else if !adding && !loading && cartera.length > 0}
 		<h1>Tu cartera</h1>
 		<CarteraUsuario on:editItem="{(event) => editItem(event)}" on:deleteItem="{(event)=> deleteItem(event)}" {carteraEnriquecida} />
 		<ValorTotal>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(valorTotal)}</ValorTotal>
