@@ -1,4 +1,4 @@
-<a data-splitbee-event="Cafecito" href="https://cafecito.app/ferminrp">Ayudame con un Cafe ☕</a>
+<a on:click="{() => sa_event("Cafecito")}" data-splitbee-event="Cafecito" href="https://cafecito.app/ferminrp" target="_blank">Ayudame con un Cafe ☕</a>
 
 <style>
   a {
