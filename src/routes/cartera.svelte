@@ -64,6 +64,9 @@
 		localStorage.setItem('cartera', JSON.stringify(cartera));
 		selectedCedear = '';
 		unidades = '';
+		if(cartera.length = 1) {
+			sa_event('Nueva Cartera');
+		}
 		sa_event('Cartera ' + e.detail.symbol);
 	}
 
