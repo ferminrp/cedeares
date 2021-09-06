@@ -35,7 +35,7 @@
         <th>{column}</th>
       {/each}
     </tr>
-    {#each priorityData as row, index}
+    {#each priorityData as row, index (row.symbol)}
     <tr>
       {#if watchlist.includes(row.symbol)}
         <td on:click="{unwatchlist(row.symbol)}"><Star color="#EA5525" size="1.3rem" /></td>
@@ -55,7 +55,7 @@
       >
     </tr>
   {/each}
-    {#each lowPriorityData as row, index}
+    {#each lowPriorityData as row, index (row.symbol)}
       <tr>
         {#if watchlist.includes(row.symbol)}
           <td><Star color="#EA5525" size="1.3rem" /></td>
