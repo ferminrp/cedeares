@@ -32,6 +32,7 @@
 	</svg>
 	<p>Tu cartera está vacía</p>
     <Button on:click>Añadir Inversion</Button>
+	<a href="/invertir">Conocé los brokers recomendados</a>
 </div>
 
 
@@ -39,7 +40,7 @@
     div {
         font-family: "Nunito", sans-serif;
         width: 100%;
-		height: 80vh;
+		height: 60vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -53,4 +54,8 @@
         height: 100px;
         color: #4E76FE;
     }
+	a {
+		color: #4E76FE;
+		margin-top: 1rem;
+	}
 </style>
