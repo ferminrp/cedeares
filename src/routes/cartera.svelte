@@ -143,7 +143,7 @@
 <main>
 	{#if loading}
 		<div class="loader">
-			<BarLoader />
+			<BarLoader color="#4e76fe" />
 		</div>
 	{/if}
 	{#if adding}
