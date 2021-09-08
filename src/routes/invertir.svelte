@@ -57,7 +57,12 @@
             nombre: 'Banza',
             logo: 'https://play-lh.googleusercontent.com/YEoZgszntAKgLZYRGSzOm0jz4yHPf5EMDh-yWKfvpPrajtDRHxpzxAV25Kvr29yCxTE',
             url: 'https://banza.com.ar/cedears?utm_source=cedears.ar&utm_medium=cedears.ar&utm_campaign=cedears.ar&utm_id=cedears.ar&utm_term=cedears.ar&utm_content=cedears.ar'
-        }
+        },
+		{
+			nombre: 'Cocos Capital',
+			logo: 'https://i.imgur.com/oYTGgnt.png',
+			url: 'https://cocos.com.ar/?utm_source=cedears.ar&utm_medium=cedears.ar&utm_campaign=cedears.ar&utm_id=cedears.ar&utm_term=cedears.ar&utm_content=cedears.ar'
+		}
 
 	];
 
