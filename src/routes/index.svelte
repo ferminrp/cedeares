@@ -10,6 +10,7 @@
 	import Share from '$lib/UI/Share.svelte';
 	import Cafecito from '$lib/UI/Cafecito.svelte';
 	import Nav from '$lib/UI/Nav.svelte';
+	import Top from '$lib/UI/Top.svelte'
 	let data = [];
 	let columns = ['', '', 'Ticker', 'Nombre', 'Precio', 'Cambio'];
 	let searchedValue = '';
@@ -128,8 +129,11 @@
 	<Callout color="#b4c5ff"
 		>Bienvenido! Aca vas a poder analizar todos los CEDEARs que actualmente cotizan en el mercado.</Callout
 	>
-	<Search on:search={search} {searchedValue} />
+
+
 	{#if data.length > 0}
+	<Top {data}></Top>
+	<Search on:search={search} {searchedValue} />
 		<Tabla
 			on:unwatchlisted={(e) => unwatchlisted(e)}
 			on:watchlisted={(e) => watchlisted(e)}
