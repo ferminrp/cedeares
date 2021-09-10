@@ -1,11 +1,11 @@
 <script>
 	export let data;
+    let dummy = [...data];
 
-	$: sortedData = data.sort(function (a, b) {
+	let sortedData = dummy.sort(function (a, b) {
 		return parseFloat(a.change) > parseFloat(b.change) ? -1 : 1;
 	});
 
-	$: console.log(sortedData.slice(0, 3));
 </script>
 
 <article>
@@ -93,6 +93,7 @@
 		max-width: 90%;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 0.5rem;
 	}
 
     div {
