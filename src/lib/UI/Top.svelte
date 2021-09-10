@@ -46,7 +46,7 @@
 				stroke-width="1.5"
 				d="M11.25 8.25V4.75H7.75"
 			/>
-		</svg>Top Performers
+		</svg>Top Performers Today
 	</h3>
 	<ol>
 		{#each sortedData.slice(0, 3) as item, i (item.symbol)}
