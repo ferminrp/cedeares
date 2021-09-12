@@ -1,11 +1,10 @@
 <script>
 	export let data;
-    let dummy = [...data];
+	let dummy = [...data];
 
 	let sortedData = dummy.sort(function (a, b) {
 		return parseFloat(a.change) > parseFloat(b.change) ? -1 : 1;
 	});
-
 </script>
 
 <article>
@@ -53,7 +52,7 @@
 			<li>
 				<div>
 					<img src={item.image} loading="lazy" alt={item.name} />
-					<p>{item.name}</p>
+					<p class="name">{item.name}</p>
 				</div>
 				<p class={parseFloat(item.change) < 0 ? 'red' : 'green'}>{item.change}</p>
 			</li>
@@ -91,14 +90,14 @@
 
 	li {
 		max-width: 90%;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.5rem;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 0.5rem;
 	}
 
-    div {
-        display: flex;
-    }
+	div {
+		display: flex;
+	}
 
 	p {
 		margin: 0;
@@ -112,10 +111,13 @@
 		color: green;
 	}
 
-    /* mobile device media query */
-    @media (max-width: 768px) {
-        article {
-            display: none;
-        }
-    }
+	/* mobile device media query  */
+	@media (max-width: 768px) {
+		.name {
+			max-width: 7rem;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
 </style>
